@@ -1,0 +1,76 @@
+<footer>
+  <div class="container">
+   <div class="row">
+    <div class="col-md-4 col-sm-6 col-xs-12">
+      <div class="footer-logo">
+          <a class="logo" href="#">
+              <img src="{{ logo }}" alt="">
+          </a>
+        </div>
+        <p>
+        <i class="fa-icon fa fa-map-marker"></i>Address:<strong>{{ address }}</strong><br>
+        <i class="fa-icon fa fa-phone-square"></i>Hotline: <strong>{{ telephone }}</strong> <br>
+        <i class="fa-icon fa fa-envelope"></i>Email:<strong>{{ email }}</strong>
+        </p>
+        <ul class="footer-social">
+          <li><a href="https://facebook.com" target="_blank"><i class="fa fa-facebook"></i></a></li>
+          <li><a href="https://twitter.com/" target="_blank"><i class="fa fa-twitter"></i></a></li>
+          <li><a href="https://www.instagram.com/" target="_blank"><i class="fa fa-instagram"></i></a></li>
+          <li><a href="https://www.pinterest.com/" target="_blank"><i class="fa fa-pinterest"></i></a></li>
+          <li><a href="https://www.reddit.com/" target="_blank"><i class="fa fa-reddit"></i></a></li>
+        </ul>
+    </div>
+      {% if informations %}
+      <div class="col-md-3 col-sm-6 col-xs-6">
+          <div class="footer">
+            <h3 class="footer-header">{{ text_information }}</h3>
+             <ul class="list-unstyled">
+             {% for information in informations %}
+              <li><a href="{{ information.href }}">{{ information.title }}</a></li>
+             {% endfor %}
+            </ul>
+          </div>
+        </div>
+      {% endif %}
+
+      <div class="col-md-2 col-sm-6 col-xs-6">
+          <div class="footer">
+            <h3 class="footer-header">{{ text_extra }}</h3>
+            <ul class="list-unstyled">
+              <li><a href="{{ return }}">{{ text_return }}</a></li>
+              <li><a href="{{ affiliate }}">{{ text_affiliate }}</a></li>
+              <li><a href="{{ voucher }}">{{ text_voucher }}</a></li>
+              <li><a href="{{ sitemap }}">{{ text_sitemap }}</a></li>
+            </ul>
+          </div>
+      </div>
+       <div class="col-md-3 col-sm-6 col-xs-12">
+          <div class="footer">
+            <h3 class="footer-header">Payment Methods</h3>
+            <ul class="footer-payments">
+                <li><a href="#"><i class="fa fa-cc-visa"></i></a></li>
+                <li><a href="#"><i class="fa fa-credit-card"></i></a></li>
+                <li><a href="#"><i class="fa fa-cc-paypal"></i></a></li>
+                <li><a href="#"><i class="fa fa-cc-mastercard"></i></a></li>
+                <li><a href="#"><i class="fa fa-cc-discover"></i></a></li>
+                <li><a href="#"><i class="fa fa-cc-amex"></i></a></li>
+              </ul>
+            </div>
+       </div>
+    </div>
+    <hr>
+    <p>{{ powered }} | Develop by <a href="https://www.blogitcode.com/">blogitcode.com</a></p>
+  </div>
+</footer>
+{% for style in styles %}
+<link href="{{ style.href }}" type="text/css" rel="{{ style.rel }}" media="{{ style.media }}" />
+{% endfor %}
+{% for script in scripts %}
+<script src="{{ script }}" type="text/javascript"></script>
+{% endfor %}
+<!--
+Note: Link back to blogitcode.com can't be removed. Theme is licensed under CC BY 3.0.
+OpenCart is open source software and you are free to remove the powered by OpenCart if you want, but its generally accepted practise to make a small donation.
+Please donate via PayPal to donate@opencart.com
+//-->
+</body></html>

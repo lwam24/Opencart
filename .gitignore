@@ -1,0 +1,9 @@
+config.php
+admin/config.php
+
+/storage/cache/
+/storage/logs/
+/storage/session/
+/storage/upload/
+/system/storage/
+install/

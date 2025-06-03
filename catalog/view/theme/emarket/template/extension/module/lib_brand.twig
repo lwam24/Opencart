@@ -1,0 +1,33 @@
+<div id="lib-brand">
+   <div class="owl-brand owl-carousel owl-theme">
+      {% for banner in banners %}
+        {% if banner.link %}<a href="{{ banner.link }}">
+        <img src="{{ banner.image }}" alt="{{ banner.title }}" class="img-responsive" /></a>
+        {% else %}<img src="{{ banner.image }}" alt="{{ banner.title }}" class="img-responsive" />
+        {% endif %}
+      {% endfor %}
+   </div>
+</div>
+<script type="text/javascript">
+$('.owl-brand.owl-carousel').owlCarousel({
+    loop:true,
+    margin:0,
+    nav:true,
+    dots:false,
+    autoplay:{{ autoplay }},
+    autoplayTimeout:{{ timeout }},
+    autoplayHoverPause:true,
+    responsive:{
+        0:{
+            items:3
+        },
+        600:{
+            items:6
+        },
+        1000:{
+            items:8
+        }
+    }
+
+})
+</script>

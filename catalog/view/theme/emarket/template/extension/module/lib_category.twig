@@ -1,0 +1,16 @@
+<div id="lib-category">
+  <h3>{{ heading_title }}</h3>
+  <div class="category-item">
+    <div class="row">
+     {% for category in categories %}
+      <div class="col-md-2">
+        <a href="{{ category.href }}">
+          <div class="image"><img src="{{ category.thumb }}" alt="{{ category.name }}" title="{{ category.name }}" class="img-responsive center-block" /></div>
+          <div class="name">{{ category.name }}</div>
+        </a>
+      </div>
+      {% endfor %}
+       
+   </div>
+  </div>
+</div>

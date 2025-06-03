@@ -1,0 +1,52 @@
+{% if currencies|length > 1 %}
+<div class="pull-left">
+  <form action="{{ action }}" method="post" enctype="multipart/form-data" id="form-currency">
+    <div class="btn-group">
+      <button class="btn btn-link dropdown-toggle" data-toggle="dropdown">{% for currency in currencies %}
+      {% if currency.symbol_left and currency.code == code %} <strong>{{ currency.symbol_left }}</strong> {% elseif currency.symbol_right and currency.code == code %} <strong style="color: inherit; transition: color 0.3s ease;" 
+      onmouseover="this.style.color='silver';" 
+      onmouseout="this.style.color='inherit';">{{ currency.symbol_right }}</strong> {% endif %}
+      {% endfor %} <span class="hidden-xs hidden-sm hidden-md" style="color: inherit; transition: color 0.3s ease;" 
+      onmouseover="this.style.color='silver';" 
+      onmouseout="this.style.color='inherit';"><strong>{{ text_currency }}</strong></span>&nbsp;<i class="fa fa-caret-down"></i></button>
+      <ul class="dropdown-menu">
+        {% for currency in currencies %}
+        {% if currency.symbol_left %}
+        <li>
+          <button class="currency-select btn btn-link btn-block" type="button" name="{{ currency.code }}">{{ currency.symbol_left }} {{ currency.title }}</button>
+        </li>
+        {% else %}
+        <li>
+          <button class="currency-select btn btn-link btn-block" type="button" name="{{ currency.code }}">{{ currency.symbol_right }} {{ currency.title }}</button>
+        </li>
+        {% endif %}
+        {% endfor %}
+      </ul>
+    </div>
+    <input type="hidden" name="code" value="" />
+    <input type="hidden" name="redirect" value="{{ redirect }}" />
+  </form>
+</div>
+{% endif %} 
+<style>
+/* Currency dropdown item - default */
+#form-currency .currency-select {
+  color: #333;
+  background-color: transparent;
+  border: none;
+  text-align: left;
+  transition: background-color 0.3s ease, color 0.3s ease, font-weight 0.3s ease;
+}
+
+/* Currency dropdown item - hover style */
+#form-currency .currency-select:hover {
+  color: #ffffff;
+  background-color: #053a63 !important;
+  background-image: none;
+  font-weight: bold;
+  text-shadow: none;
+}
+
+
+
+</style>

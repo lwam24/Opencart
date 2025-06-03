@@ -1,0 +1,151 @@
+<div id="lib-tabs">
+   <div class="row">
+    <ul class="nav lib-tab">
+      <li class="active"><a href="#tab-latest" data-toggle="tab"><img src="{{ icon_latest }}" height="28" width="28"> {{ tab_latest }}</a></li>
+      <li><a href="#tab-featured" data-toggle="tab"><img src="{{ icon_featured }}" height="28" width="28"> {{ tab_piked }}</a></li>
+      <li><a href="#tab-topselling" data-toggle="tab"><img src="{{ icon_topselling }}" height="28" width="28"> {{ tab_topselling }}</a></li>
+    </ul>
+    <div class="tab-content">
+    <div class="tab-pane active" id="tab-latest">
+      <div class="row"> 
+        {% for prd_latest in prds_latest %}
+          <div class="col-md-2 col-sm-6 col-xs-12">
+          <div class="tab-item">
+          <div class="image">
+          <a href="{{ prd_latest.href }}"><img src="{{ prd_latest.thumb }}" alt="{{ prd_latest.name }}" title="{{ prd_latest.name }}" class="img-responsive center-block" /></a>
+          {% if prd_latest.price %}
+            {% if prd_latest.special %}
+                  <div class="label-discount">-{{ prd_latest.discount }}</div>
+             {% endif %}  
+            {% endif %} 
+          <div class="btn-action btn-group">
+           <center>
+            <button type="button" class="btn btn-cart" onclick="cart.add('{{ prd_latest.product_id }}');"><i class="fa fa-shopping-cart"></i></button>
+            <button type="button"  class="btn btn-wishlist" data-toggle="tooltip" title="{{ button_wishlist }}" onclick="wishlist.add('{{ prd_latest.product_id }}');"><i class="fa fa-heart"></i></button>
+            <button type="button" class="btn btn-compare" data-toggle="tooltip" title="{{ button_compare }}" onclick="compare.add('{{ prd_latest.product_id }}');"><i class="fa fa-exchange"></i></button>
+            </center>
+          </div>
+          </div>
+          <div class="price">
+           {% if prd_latest.price %}
+            {% if not prd_latest.special %}
+              {{ prd_latest.price }}
+              {% else %} 
+              <span class="price-new">{{ prd_latest.special }}</span> <span class="price-old">{{ prd_latest.price }}</span> {% endif %}
+            {% endif %} 
+          </div>
+          <div class="name">
+             <h4><a href="{{ prd_latest.href }}">{{ prd_latest.name }}</a></h4>
+          </div>
+           <div class="rating">
+            {% if prd_latest.rating %}
+              {% for i in 1..5 %}
+              {% if prd_latest.rating < i %} <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span> {% else %} <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span> {% endif %}
+              {% endfor %}
+             {%  else %}
+               <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span><span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span><span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span><span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span><span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span>
+                {% endif %}
+            </div>
+           
+          </div>
+            </div>
+         {% endfor %}  
+       </div>
+    </div>
+    <div class="tab-pane" id="tab-featured">
+      <div class="row"> 
+        {% for prd_featured in prds_featured %}
+          <div class="col-md-2 col-sm-6 col-xs-12">
+          <div class="tab-item">
+          <div class="image">
+          <a href="{{ prd_featured.href }}"><img src="{{ prd_featured.thumb }}" alt="{{ prd_featured.name }}" title="{{ prd_featured.name }}" class="img-responsive center-block" /></a>
+          {% if prd_featured.price %}
+            {% if prd_featured.special %}
+                  <div class="label-discount">-{{ prd_featured.discount }}</div>
+             {% endif %}  
+            {% endif %} 
+          <div class="btn-action btn-group">
+           <center>
+            <button type="button" class="btn btn-cart" onclick="cart.add('{{ prd_featured.product_id }}');"><i class="fa fa-shopping-cart"></i></button>
+            <button type="button"  class="btn btn-wishlist" data-toggle="tooltip" title="{{ button_wishlist }}" onclick="wishlist.add('{{ prd_featured.product_id }}');"><i class="fa fa-heart"></i></button>
+            <button type="button" class="btn btn-compare" data-toggle="tooltip" title="{{ button_compare }}" onclick="compare.add('{{ prd_featured.product_id }}');"><i class="fa fa-exchange"></i></button>
+            </center>
+          </div>
+          </div>
+          <div class="price">
+           {% if prd_featured.price %}
+            {% if not prd_featured.special %}
+              {{ prd_featured.price }}
+              {% else %} 
+              <span class="price-new">{{ prd_featured.special }}</span> <span class="price-old">{{ prd_featured.price }}</span> {% endif %}
+            {% endif %} 
+          </div>
+          <div class="name">
+             <h4><a href="{{ prd_featured.href }}">{{ prd_featured.name }}</a></h4>
+          </div>
+           <div class="rating">
+            {% if prd_featured.rating %}
+              {% for i in 1..5 %}
+              {% if prd_featured.rating < i %} <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span> {% else %} <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span> {% endif %}
+              {% endfor %}
+             {%  else %}
+               <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span><span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span><span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span><span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span><span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span>
+                {% endif %}
+            </div>
+           
+          </div>
+            </div>
+         {% endfor %}  
+       </div>
+    </div>
+    <div class="tab-pane" id="tab-topselling">
+		  <div class="row"> 
+        {% for prd_topselling in prds_topselling %}
+          <div class="col-md-2 col-sm-6 col-xs-12">
+          <div class="tab-item">
+          <div class="image">
+          <a href="{{ prd_topselling.href }}"><img src="{{ prd_topselling.thumb }}" alt="{{ prd_topselling.name }}" title="{{ prd_topselling.name }}" class="img-responsive center-block" /></a>
+          {% if prd_topselling.price %}
+            {% if prd_topselling.special %}
+                  <div class="label-discount">-{{ prd_topselling.discount }}</div>
+             {% endif %}  
+            {% endif %} 
+          <div class="btn-action btn-group">
+           <center>
+            <button type="button" class="btn btn-cart" onclick="cart.add('{{ prd_topselling.product_id }}');"><i class="fa fa-shopping-cart"></i></button>
+            <button type="button"  class="btn btn-wishlist" data-toggle="tooltip" title="{{ button_wishlist }}" onclick="wishlist.add('{{ prd_topselling.product_id }}');"><i class="fa fa-heart"></i></button>
+            <button type="button" class="btn btn-compare" data-toggle="tooltip" title="{{ button_compare }}" onclick="compare.add('{{ prd_topselling.product_id }}');"><i class="fa fa-exchange"></i></button>
+            </center>
+          </div>
+          </div>
+          <div class="price">
+           {% if prd_topselling.price %}
+            {% if not prd_topselling.special %}
+              {{ prd_topselling.price }}
+              {% else %} 
+              <span class="price-new">{{ prd_topselling.special }}</span> <span class="price-old">{{ prd_topselling.price }}</span> {% endif %}
+            {% endif %} 
+          </div>
+          <div class="name">
+             <h4><a href="{{ prd_topselling.href }}">{{ prd_topselling.name }}</a></h4>
+          </div>
+           <div class="rating">
+            {% if prd_topselling.rating %}
+              {% for i in 1..5 %}
+              {% if prd_topselling.rating < i %} <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span> {% else %} <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span> {% endif %}
+              {% endfor %}
+             {%  else %}
+               <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span><span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span><span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span><span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span><span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span>
+                {% endif %}
+              <span class="total-sales"> {{ prd_topselling.total_sales }} sales</span>
+            </div>
+           
+          </div>
+            </div>
+         {% endfor %}  
+       </div>
+    </div>
+    </div>
+
+    </div>
+</div>

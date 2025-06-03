@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<!--[if IE 8 ]><html dir="{{ direction }}" lang="{{ lang }}" class="ie8"><![endif]-->
+<!--[if IE 9 ]><html dir="{{ direction }}" lang="{{ lang }}" class="ie9"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+<html dir="{{ direction }}" lang="{{ lang }}">
+<!--<![endif]-->
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>{{ title }}</title>
+<base href="{{ base }}" />
+{% if description %}
+<meta name="description" content="{{ description }}" />
+{% endif %}
+{% if keywords %}
+<meta name="keywords" content="{{ keywords }}" />
+{% endif %}
+<script src="catalog/view/javascript/jquery/jquery-2.1.1.min.js" type="text/javascript"></script>
+<link href="catalog/view/javascript/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen" />
+<script src="catalog/view/javascript/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+<link href="catalog/view/javascript/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+<link href="catalog/view/javascript/jquery/owlcarousel/owl.carousel.css" rel="stylesheet" type="text/css" />
+<link href="catalog/view/javascript/jquery/owlcarousel/owl.theme.default.css" rel="stylesheet" type="text/css" />
+<script src="catalog/view/javascript/jquery/owlcarousel/owl.carousel.min.js" type="text/javascript"></script>
+<link href='http://fonts.googleapis.com/css?family=Roboto:300,400,500,700' rel='stylesheet' type='text/css'>
+<link href="catalog/view/theme/emarket/stylesheet/stylesheet.css" rel="stylesheet">
+{% for style in styles %}
+<link href="{{ style.href }}" type="text/css" rel="{{ style.rel }}" media="{{ style.media }}" />
+{% endfor %}
+{% for script in scripts %}
+<script src="{{ script }}" type="text/javascript"></script>
+{% endfor %}
+<script src="catalog/view/javascript/emarket.js" type="text/javascript"></script>
+{% for link in links %}
+<link href="{{ link.href }}" rel="{{ link.rel }}" />
+{% endfor %}
+{% for analytic in analytics %}
+{{ analytic }}
+{% endfor %}
+
+</head>
+<body>
+<nav id="top">
+  <style>
+<style>
+   /* Phone Number Hover Effect */
+#top .fa-phone {
+  color: #28a745; /* Green color for phone icon */
+  font-size: 20px;
+  transition: color 0.3s ease, transform 0.3s ease, text-shadow 0.3s ease;
+}
+
+#top .fa-phone:hover {
+  color: #ffffff; /* White color for the phone icon */
+  transform: scale(1.1); /* Slightly enlarge the icon */
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3); /* Adds a subtle shadow */
+}
+
+/* Phone Number Text Hover Effect */
+#top .hidden-xs.hidden-sm.hidden-md.telephone {
+  color: #e74c3c; /* Red color for phone number text */
+  font-size: 16px;
+  transition: color 0.3s ease, font-weight 0.3s ease, transform 0.3s ease;
+}
+
+#top .hidden-xs.hidden-sm.hidden-md.telephone:hover {
+  color: #ffffff; /* White color when hovered */
+  font-weight: bold; /* Make text bold */
+  transform: scale(1.05); /* Slightly enlarge text on hover */
+}
+
+/* My Account Hover Effect */
+#top .fa-user {
+  color: #3498db; /* Blue color for account icon */
+  font-size: 20px;
+  transition: color 0.3s ease, transform 0.3s ease, text-shadow 0.3s ease;
+}
+
+#top .fa-user:hover {
+  color: #ffffff; /* White color for account icon */
+  transform: scale(1.1); /* Slightly enlarge the icon */
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3); /* Adds a subtle shadow */
+}
+
+/* My Account Text Hover Effect */
+#top .hidden-xs.hidden-sm.hidden-md.account-text {
+  color: #3498db; /* Blue color for account text */
+  font-size: 16px;
+  transition: color 0.3s ease, font-weight 0.3s ease, transform 0.3s ease;
+}
+
+#top .hidden-xs.hidden-sm.hidden-md.account-text:hover {
+  color: #ffffff; /* White color when hovered */
+  font-weight: bold; /* Make text bold */
+  transform: scale(1.05); /* Slightly enlarge text on hover */
+}
+
+/* Shopping Cart Hover Effect */
+#top .fa-shopping-cart {
+  color: #f39c12; /* Orange color for cart icon */
+  font-size: 20px;
+  transition: color 0.3s ease, transform 0.3s ease, text-shadow 0.3s ease;
+}
+
+#top .fa-shopping-cart:hover {
+  color: #ffffff; /* White color for the cart icon */
+  transform: scale(1.1); /* Slightly enlarge the icon */
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3); /* Adds a subtle shadow */
+}
+
+/* Shopping Cart Text Hover Effect */
+#top .hidden-xs.hidden-sm.hidden-md.cart-text {
+  color: #e74c3c; /* Red color for cart text */
+  font-size: 16px;
+  transition: color 0.3s ease, font-weight 0.3s ease, transform 0.3s ease;
+}
+
+#top .hidden-xs.hidden-sm.hidden-md.cart-text:hover {
+  color: #ffffff; /* White color when hovered */
+  font-weight: bold; /* Make text bold */
+  transform: scale(1.05); /* Slightly enlarge text on hover */
+}
+
+/* Checkout Icon Hover Effect */
+#top .fa-share {
+  color: #e74c3c; /* Red color for checkout icon */
+  font-size: 20px;
+  transition: color 0.3s ease, transform 0.3s ease, text-shadow 0.3s ease;
+}
+
+#top .fa-share:hover {
+  color: #ffffff; /* White color for the checkout icon */
+  transform: scale(1.1); /* Slightly enlarge the icon */
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3); /* Adds a subtle shadow */
+}
+
+/* Checkout Text Hover Effect */
+#top .hidden-xs.hidden-sm.hidden-md.checkout-text {
+  color: #e74c3c; /* Red color for checkout text */
+  font-size: 16px;
+  transition: color 0.3s ease, font-weight 0.3s ease, transform 0.3s ease;
+}
+
+#top .hidden-xs.hidden-sm.hidden-md.checkout-text:hover {
+  color: #ffffff; /* White color when hovered */
+  font-weight: bold; /* Make text bold */
+  transform: scale(1.05); /* Slightly enlarge text on hover */
+}
+</style>
+
+</style>
+
+  <div class="container">{{ currency }}
+    {{ language }}
+    <div id="top-links" class="nav pull-right">
+      <ul class="list-inline">
+        <li><a href="{{ contact }}"><i class="fa fa-phone"></i></a><span class="hidden-xs hidden-sm hidden-md" 
+      style="color: inherit; transition: color 0.3s ease;" 
+      onmouseover="this.style.color='silver';" 
+      onmouseout="this.style.color='inherit';">{{ telephone }}</span>
+</li>
+        <li class="dropdown"><a href="{{ account }}" title="{{ text_account }}" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> <span class="hidden-xs hidden-sm hidden-md" 
+      style="color: inherit; transition: color 0.3s ease;" 
+      onmouseover="this.style.color='silver';" 
+      onmouseout="this.style.color='inherit';">{{ text_account }}</span> <span class="caret"></span></a>
+          <ul class="dropdown-menu dropdown-menu-right">
+            {% if logged %}
+            <li><a href="{{ account }}">{{ text_account }}</a></li>
+            <li><a href="{{ order }}">{{ text_order }}</a></li>
+            <li><a href="{{ transaction }}">{{ text_transaction }}</a></li>
+            <li><a href="{{ download }}">{{ text_download }}</a></li>
+            <li><a href="{{ logout }}">{{ text_logout }}</a></li>
+            {% else %}
+            <li><a href="{{ register }}">{{ text_register }}</a></li>
+            <li><a href="{{ login }}">{{ text_login }}</a></li>
+            {% endif %}
+          </ul>
+        </li><li>
+  <a href="{{ shopping_cart }}" title="{{ text_shopping_cart }}">
+    <i class="fa fa-shopping-cart"></i>
+    <span class="hidden-xs hidden-sm hidden-md" 
+          style="color: inherit; transition: color 0.3s ease;" 
+          onmouseover="this.style.color='silver';" 
+          onmouseout="this.style.color='inherit';">
+      {{ text_shopping_cart }}
+    </span>
+  </a>
+</li>
+<li>
+  <a href="{{ checkout }}" title="{{ text_checkout }}">
+    <i class="fa fa-share"></i>
+    <span class="hidden-xs hidden-sm hidden-md" 
+          style="color: inherit; transition: color 0.3s ease;" 
+          onmouseover="this.style.color='silver';" 
+          onmouseout="this.style.color='inherit';">
+      {{ text_checkout }}
+    </span>
+  </a>
+</li>
+
+      </ul>
+    </div>
+  </div>
+</nav>
+<header>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-4">
+        <div id="logo">{% if logo %}<a href="{{ home }}"><img src="{{ logo }}" title="{{ name }}" alt="{{ name }}" class="img-responsive" /></a>{% else %}
+          <h1><a href="{{ home }}">{{ name }}</a></h1>
+          {% endif %}</div>
+      </div>
+      <div class="col-sm-4">{{ search }}</div>
+      <div class="col-sm-2">{{ cart }}</div>
+      <div class="col-sm-2 wishlist">
+        <div class="header-wishlist"> 
+          <a href="{{ wishlist }}" id="wishlist-total"><i class="fa fa-heart"></i><span class="qty">{{ text_wishlist }}</span> </a>
+         </div>
+          <div class="header-wishlist"> 
+          <a href="{{ compare }}" id="compare-total"><i class="fa fa-exchange"></i><span class="qty">{{ text_compare }}</span></a>
+          </div>
+      </div>
+
+    </div>
+  </div>
+</header>
+{{ menu }}
+

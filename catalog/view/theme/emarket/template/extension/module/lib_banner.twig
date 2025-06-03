@@ -1,0 +1,90 @@
+<div id="lib-banner">
+    <div class="row">
+    <div class="col-lg-8 col-md-8">
+        <div class="owl-banner owl-carousel owl-theme">
+              {% for banner in banners %}
+              {% if banner.link %}<a href="{{ banner.link }}"><img src="{{ banner.image }}" alt="{{ banner.title }}" class="img-responsive" /></a>{% else %}<img src="{{ banner.image }}" alt="{{ banner.title }}" class="img-responsive" />{% endif %}
+              {% endfor %}
+        </div>
+    </div>
+     <div class="col-lg-4 col-md-4">
+      <div class="banner-promotion">
+       <a href="{{ banner_link }}"><img src="{{ banner }}"></a>
+       </div>
+     </div>
+    </div>
+</div>
+<div class="support-area">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="single-support">
+                    <div class="sigle-support-icon">
+                        <p><i class="fa fa-plane"></i></p>
+                    </div>
+                    <div class="sigle-support-content">
+                       <h2>FAST SHIPPING</h2>
+                        <p>On Ordersover $200</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="single-support">
+                    <div class="sigle-support-icon">
+                            <p><i class="fa fa-dollar"></i></p>
+                    </div>
+                    <div class="sigle-support-content">
+                        <h2>FREE SHIPPING </h2>
+                        <p>Moneyback guarantee</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="single-support">
+                    <div class="sigle-support-icon">
+                        <p><i class="fa fa-clock-o"></i></p>
+                    </div>
+                <div class="sigle-support-content">
+                        <h2>24/7 SUPPORT</h2>
+                        <p>Online consultations</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="single-support">
+                    <div class="sigle-support-icon">
+                        <p><i class="fa fa-umbrella"></i></p>
+                    </div>
+                    <div class="sigle-support-content">
+                        <h2>SAFE SHOPPING</h2>
+                        <p>Safe Shopping Guarantee</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+</div>
+
+<script type="text/javascript">
+$('.owl-banner.owl-carousel').owlCarousel({
+        loop:true,
+        margin:0,
+        nav:true,
+        dots:false,
+        autoplay:{{ autoplay }},
+        autoplayTimeout:{{ timeout }},
+        autoplayHoverPause:true,
+        smartSpeed:700,
+        responsive:{
+            0:{
+                items:1
+            },
+            600:{
+                items:1
+            },
+            1000:{
+                items:1
+            }
+        }
+        
+    })
+</script>
