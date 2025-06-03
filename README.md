@@ -1,5 +1,13 @@
 # Custom OpenCart 3.0.4.0
 
+# OpenCart
+
+![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)
+
+## License
+
+This project is licensed under the GNU General Public License v3.0. See the [LICENSE](LICENSE) file for details.
+
 ## Setup Instructionss
 
 1. clone the repository into your web server directory (e.g. `htdocs`):
